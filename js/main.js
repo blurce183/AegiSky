@@ -1,12 +1,14 @@
 // ===== AegiSky — main.js =====
 
-// Navbar: sfondo allo scroll
-const navbar = document.getElementById("navbar");
+const SERVER_IP = "aegisky.cloud-ip.cc";
+
+// Nav: background on scroll
+const nav = document.getElementById("nav");
 window.addEventListener("scroll", () => {
-  navbar.classList.toggle("scrolled", window.scrollY > 40);
+  nav.classList.toggle("scrolled", window.scrollY > 30);
 });
 
-// Menu mobile
+// Mobile menu
 const navToggle = document.getElementById("navToggle");
 const navLinks = document.getElementById("navLinks");
 navToggle.addEventListener("click", () => navLinks.classList.toggle("open"));
@@ -14,9 +16,10 @@ navLinks.querySelectorAll("a").forEach((a) =>
   a.addEventListener("click", () => navLinks.classList.remove("open"))
 );
 
-// Copia IP
-const SERVER_IP = "aegisky.cloud-ip.cc";
-document.querySelectorAll(".ip-box").forEach((box) => {
+// Copy IP
+function bindCopy(buttonId, textId) {
+  const box = document.getElementById(buttonId);
+  const label = document.getElementById(textId);
   box.addEventListener("click", async () => {
     try {
       await navigator.clipboard.writeText(SERVER_IP);
@@ -28,34 +31,37 @@ document.querySelectorAll(".ip-box").forEach((box) => {
       document.execCommand("copy");
       ta.remove();
     }
-    const hint = box.querySelector(".copy-hint");
     box.classList.add("copied");
-    hint.textContent = "✅ Copiato!";
+    label.textContent = "Copied";
     setTimeout(() => {
       box.classList.remove("copied");
-      hint.textContent = "📋 Copia";
+      label.textContent = "Copy";
     }, 2000);
   });
-});
+}
+bindCopy("ipLine", "ipCopyText");
+bindCopy("ipLineBottom", "ipCopyTextBottom");
 
-// Conteggio giocatori via API mcsrvstat.us
-async function updatePlayerCount() {
-  const el = document.getElementById("statPlayers");
+// Live status via mcsrvstat.us
+async function updateStatus() {
+  const dot = document.getElementById("statusDot");
+  const text = document.getElementById("statusText");
   try {
     const res = await fetch(`https://api.mcsrvstat.us/3/${SERVER_IP}`);
     const data = await res.json();
     if (data && data.online) {
-      el.textContent = `${data.players.online}/${data.players.max}`;
+      dot.classList.add("online");
+      text.textContent = `Online — ${data.players.online}/${data.players.max} players`;
     } else {
-      el.textContent = "Offline";
+      text.textContent = "Offline";
     }
   } catch {
-    el.textContent = "—";
+    text.textContent = "Status unavailable";
   }
 }
-updatePlayerCount();
+updateStatus();
 
-// Animazione reveal allo scroll
+// Reveal on scroll
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -67,7 +73,7 @@ const observer = new IntersectionObserver(
   },
   { threshold: 0.12 }
 );
-document.querySelectorAll(".section-head, .card, .step, .world-card").forEach((el) => {
+document.querySelectorAll(".world, .principle, .step, .section-head").forEach((el) => {
   el.classList.add("reveal");
   observer.observe(el);
 });

@@ -1,226 +1,186 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AegiSky — Server Minecraft Survival &amp; SkyBlock</title>
-  <meta name="description" content="AegiSky è una rete Minecraft dedicata al survival e allo skyblock di lungo termine. Nessun reset, nessuna fretta. Java 1.21+ — aegisky.cloud-ip.cc" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b1020'/%3E%3Crect x='8' y='14' width='16' height='4' fill='%234ade80'/%3E%3Crect x='10' y='18' width='12' height='6' fill='%2392400e'/%3E%3C/svg%3E" />
+  <title>AegiSky — A world carved in silence</title>
+  <meta name="description" content="AegiSky is a Minecraft network built for long-term survival and skyblock. No resets, no noise — just the rhythm you choose. Java 1.21+ — aegisky.cloud-ip.cc" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2308090c'/%3E%3Crect x='7' y='7' width='18' height='18' rx='3' fill='none' stroke='%237aa2ff' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%237aa2ff'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <!-- ===== NAVBAR ===== -->
-  <header class="navbar" id="navbar">
+  <header class="nav" id="nav">
     <div class="container nav-inner">
-      <a href="#home" class="brand">
-        <span class="brand-cube" aria-hidden="true"></span>
-        <span class="brand-name">Aegi<span class="accent">Sky</span></span>
-      </a>
+      <a href="#top" class="brand">AegiSky</a>
       <nav class="nav-links" id="navLinks">
-        <a href="#home">Home</a>
-        <a href="#survival">Survival</a>
-        <a href="#skyblock">SkyBlock</a>
-        <a href="#features">Perché AegiSky</a>
-        <a href="#join">Come entrare</a>
+        <a href="#worlds">Worlds</a>
+        <a href="#philosophy">Philosophy</a>
+        <a href="#join">How to join</a>
+        <a href="https://mc.aegisky.cloud-ip.cc/" target="_blank" rel="noopener">Status</a>
       </nav>
-      <button class="nav-toggle" id="navToggle" aria-label="Apri menu">
-        <span></span><span></span><span></span>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+        <span></span><span></span>
       </button>
     </div>
   </header>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero" id="home">
-    <div class="hero-scene" aria-hidden="true">
-      <span class="star s1"></span><span class="star s2"></span><span class="star s3"></span>
-      <span class="star s4"></span><span class="star s5"></span><span class="star s6"></span>
-      <div class="cloud c1"></div>
-      <div class="cloud c2"></div>
-      <div class="cloud c3"></div>
-      <div class="island">
-        <span class="island-top"></span>
-        <span class="island-dirt"></span>
-        <span class="island-tip"></span>
-      </div>
-    </div>
-    <div class="hero-overlay"></div>
-    <div class="container hero-content">
-      <span class="badge">Java 1.21+ — Nessun reset</span>
-      <h1>Un mondo costruito <span class="gradient-text">con calma</span></h1>
-      <p class="hero-sub">
-        AegiSky è una rete Minecraft dedicata al <strong>Survival</strong> e allo <strong>SkyBlock</strong>
-        di lungo termine. Nessun reset, nessuna fretta — solo il ritmo che scegli tu.
-      </p>
-      <div class="ip-box" id="ipBox" title="Clicca per copiare">
-        <span class="ip-label">IP del server</span>
-        <span class="ip-value" id="serverIp">aegisky.cloud-ip.cc</span>
-        <span class="copy-hint" id="copyHint">📋 Copia</span>
-      </div>
-      <div class="hero-actions">
-        <a href="#join" class="btn btn-primary">Inizia a giocare</a>
-        <a href="#survival" class="btn btn-ghost">Scopri i mondi</a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat"><span class="stat-num" id="statPlayers">—</span><span class="stat-label">Giocatori online</span></div>
-        <div class="stat"><span class="stat-num">0</span><span class="stat-label">Reset del mondo</span></div>
-        <div class="stat"><span class="stat-num">2</span><span class="stat-label">Modalità</span></div>
-        <div class="stat"><span class="stat-num">24/7</span><span class="stat-label">Server attivo</span></div>
-      </div>
-    </div>
-  </section>
+  <main id="top">
 
-  <!-- ===== SURVIVAL ===== -->
-  <section class="section" id="survival">
-    <div class="container">
-      <div class="section-head">
-        <span class="kicker">Mondo 01</span>
-        <h2>⚔️ Survival</h2>
-        <p>Costruisci senza fretta. Un mondo persistente che resta, stagione dopo stagione.</p>
-      </div>
-      <div class="world-card">
-        <ul class="feature-list">
-          <li>🌍 <strong>Mondo persistente</strong> — mai azzerato, le tue costruzioni restano per sempre.</li>
-          <li>🛡️ <strong>Terreni protetti</strong> — claim per proteggere basi e costruzioni.</li>
-          <li>💰 <strong>Economia lenta e stabile</strong> — pensata per durare nel tempo.</li>
-          <li>🤝 <strong>PvP disattivato</strong> — difficoltà normale, focus sulla collaborazione.</li>
-          <li>🕊️ <strong>Community tranquilla</strong> — niente competizione forzata.</li>
-        </ul>
-        <div class="world-meta">
-          <div><span>Modalità</span><strong>Survival</strong></div>
-          <div><span>Difficoltà</span><strong>Normale</strong></div>
-          <div><span>PvP</span><strong>Disattivato</strong></div>
-          <div><span>Reset mappa</span><strong>Mai</strong></div>
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <a class="status-pill" id="statusPill" href="https://mc.aegisky.cloud-ip.cc/" target="_blank" rel="noopener">
+          <span class="status-dot" id="statusDot"></span>
+          <span id="statusText">Checking status…</span>
+          <span class="status-sep">·</span>
+          <span>Java 1.21+</span>
+        </a>
+        <h1 class="hero-title">
+          A world carved<br /><em>in silence.</em>
+        </h1>
+        <p class="hero-sub">
+          AegiSky is a Minecraft network built for long-term survival and skyblock.
+          No resets, no noise — just the rhythm you choose.
+        </p>
+        <div class="hero-actions">
+          <button class="ip-line" id="ipLine" title="Click to copy">
+            <span class="ip-mono">aegisky.cloud-ip.cc</span>
+            <span class="ip-copy" id="ipCopyText">Copy</span>
+          </button>
+        </div>
+        <div class="hero-cta">
+          <a href="#join" class="btn btn-solid">Start playing</a>
+          <a href="#worlds" class="btn btn-ghost">Explore the worlds</a>
         </div>
       </div>
-    </div>
-  </section>
+      <div class="hero-fade" aria-hidden="true"></div>
+    </section>
 
-  <!-- ===== SKYBLOCK ===== -->
-  <section class="section section-alt" id="skyblock">
-    <div class="container">
-      <div class="section-head">
-        <span class="kicker">Mondo 02</span>
-        <h2>☁️ SkyBlock</h2>
-        <p>Il vuoto, un passo alla volta. Isole personali sospese nel nulla.</p>
-      </div>
-      <div class="world-card">
-        <ul class="feature-list">
-          <li>🏝️ <strong>Isola personale</strong> — il tuo spazio sospeso nel vuoto, solo tuo.</li>
-          <li>👥 <strong>Co-op fino a 4 giocatori</strong> — costruisci l'isola insieme agli amici.</li>
-          <li>🚶 <strong>Visite tra giocatori</strong> — esplora le isole degli altri.</li>
-          <li>🌱 <strong>Progressione senza fretta</strong> — cresci al tuo ritmo.</li>
-          <li>🚫 <strong>Nessuna classifica</strong> — niente corse, solo il tuo percorso.</li>
-        </ul>
-        <div class="world-meta">
-          <div><span>Modalità</span><strong>SkyBlock</strong></div>
-          <div><span>Isola</span><strong>Personale</strong></div>
-          <div><span>Co-op</span><strong>Fino a 4</strong></div>
-          <div><span>Classifiche</span><strong>Nessuna</strong></div>
+    <!-- ===== WORLDS ===== -->
+    <section class="section" id="worlds">
+      <div class="container">
+        <div class="section-head">
+          <span class="label">The worlds</span>
+          <h2>Two ways to inhabit<br /><em>the quiet.</em></h2>
+          <p>Each world is built to last: no sudden resets, no forced competition. Choose your dimension and take the time you need.</p>
+        </div>
+        <div class="worlds">
+          <article class="world">
+            <div class="world-head">
+              <span class="world-num">01</span>
+              <h3>Survival</h3>
+              <p class="world-tag">Build without haste.</p>
+            </div>
+            <p class="world-desc">
+              Persistent survival. Protected land, a slow economy, and a community
+              that values quiet. A world that stays, season after season.
+            </p>
+            <ul class="specs">
+              <li><span>Mode</span><strong>Survival</strong></li>
+              <li><span>Difficulty</span><strong>Normal</strong></li>
+              <li><span>PvP</span><strong>Disabled</strong></li>
+              <li><span>Map reset</span><strong>Never</strong></li>
+            </ul>
+          </article>
+          <article class="world">
+            <div class="world-head">
+              <span class="world-num">02</span>
+              <h3>SkyBlock</h3>
+              <p class="world-tag">The void, one step at a time.</p>
+            </div>
+            <p class="world-desc">
+              Personal islands suspended in the void. Unhurried progression and
+              visits between players. No leaderboards, no rush — only your own pace.
+            </p>
+            <ul class="specs">
+              <li><span>Island</span><strong>Personal</strong></li>
+              <li><span>Co-op</span><strong>Up to 4</strong></li>
+              <li><span>Visits</span><strong>Open</strong></li>
+              <li><span>Leaderboards</span><strong>None</strong></li>
+            </ul>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== FEATURES ===== -->
-  <section class="section" id="features">
-    <div class="container">
-      <div class="section-head">
-        <span class="kicker">Perché AegiSky</span>
-        <h2>✨ Una rete costruita per durare</h2>
-      </div>
-      <div class="grid-3">
-        <div class="card">
-          <div class="card-icon">♾️</div>
-          <h3>Mai un reset</h3>
-          <p>I mondi non vengono mai azzerati: ciò che costruisci resta.</p>
+    <!-- ===== PHILOSOPHY ===== -->
+    <section class="section section-alt" id="philosophy">
+      <div class="container">
+        <div class="section-head">
+          <span class="label">Philosophy</span>
+          <h2>Built to last.</h2>
+          <p>Three principles shape everything on AegiSky — from the map to the economy.</p>
         </div>
-        <div class="card">
-          <div class="card-icon">🕊️</div>
-          <h3>Zero fretta</h3>
-          <p>Niente classifiche né competizione forzata. Solo il tuo ritmo.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🛡️</div>
-          <h3>Protezioni incluse</h3>
-          <p>Terreni claimabili per giocare sereno, senza sorprese.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🚀</div>
-          <h3>Stabile e reattivo</h3>
-          <p>Server attivo 24/7, ottimizzato per un'esperienza senza lag.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🤝</div>
-          <h3>Community italiana</h3>
-          <p>Un posto tranquillo dove costruire insieme, senza rumore.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">☕</div>
-          <h3>Java 1.21+</h3>
-          <p>Aggiornamenti costanti alle ultime versioni di Minecraft.</p>
+        <div class="principles">
+          <div class="principle">
+            <span class="principle-num">01</span>
+            <h3>No resets</h3>
+            <p>Your builds are not temporary. The map never wipes — what you make becomes part of the world's history.</p>
+          </div>
+          <div class="principle">
+            <span class="principle-num">02</span>
+            <h3>No noise</h3>
+            <p>No leaderboards, no forced competition, no constant events shouting for attention. Just the game, at your pace.</p>
+          </div>
+          <div class="principle">
+            <span class="principle-num">03</span>
+            <h3>No rush</h3>
+            <p>A slow economy and a quiet community. Progress is a marathon, not a race — and there is no finish line.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== JOIN ===== -->
-  <section class="section section-cta" id="join">
-    <div class="container">
-      <div class="section-head">
-        <span class="kicker">Come entrare</span>
-        <h2>🎮 Sei a 3 passi dal gioco</h2>
+    <!-- ===== JOIN ===== -->
+    <section class="section" id="join">
+      <div class="container">
+        <div class="section-head">
+          <span class="label">How to join</span>
+          <h2>Three steps<br /><em>and you're in.</em></h2>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <span class="step-num">1</span>
+            <h3>Launch Minecraft</h3>
+            <p>Java Edition, version 1.21 or newer.</p>
+          </div>
+          <div class="step">
+            <span class="step-num">2</span>
+            <h3>Add the server</h3>
+            <p>Enter <span class="ip-mono-sm">aegisky.cloud-ip.cc</span> in your server list.</p>
+          </div>
+          <div class="step">
+            <span class="step-num">3</span>
+            <h3>Choose your world</h3>
+            <p>Survival or SkyBlock. Take your time.</p>
+          </div>
+        </div>
+        <div class="join-ip">
+          <button class="ip-line ip-line-lg" id="ipLineBottom" title="Click to copy">
+            <span class="ip-mono">aegisky.cloud-ip.cc</span>
+            <span class="ip-copy" id="ipCopyTextBottom">Copy</span>
+          </button>
+        </div>
       </div>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <h3>Avvia Minecraft</h3>
-          <p>Versione <strong>Java 1.21+</strong> o successiva.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <h3>Aggiungi il server</h3>
-          <p>Inserisci l'IP <strong>aegisky.cloud-ip.cc</strong> nella lista server.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <h3>Scegli il mondo</h3>
-          <p>Al login scegli tra <strong>Survival</strong> e <strong>SkyBlock</strong>. Buona quiete!</p>
-        </div>
-      </div>
-      <div class="cta-actions">
-        <div class="ip-box ip-box-cta" id="ipBoxCta" title="Clicca per copiare">
-          <span class="ip-value">aegisky.cloud-ip.cc</span>
-          <span class="copy-hint">📋 Copia IP</span>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== FOOTER ===== -->
+  </main>
+
   <footer class="footer">
     <div class="container footer-inner">
-      <div class="footer-brand">
-        <span class="brand-name">Aegi<span class="accent">Sky</span></span>
-        <p>Survival &amp; SkyBlock di lungo termine. Nessun reset, nessun rumore.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Mondi</h4>
-        <a href="#survival">Survival</a>
-        <a href="#skyblock">SkyBlock</a>
-        <a href="#join">Come entrare</a>
-      </div>
-      <div class="footer-col">
-        <h4>Info</h4>
-        <a href="#features">Perché AegiSky</a>
-        <a href="https://mc.aegisky.cloud-ip.cc/" target="_blank" rel="noopener">Stato del server</a>
-      </div>
+      <span class="footer-brand">AegiSky</span>
+      <span class="footer-note">Survival &amp; SkyBlock, built to last.</span>
+      <nav class="footer-links">
+        <a href="https://mc.aegisky.cloud-ip.cc/" target="_blank" rel="noopener">Server status</a>
+      </nav>
     </div>
-    <div class="footer-bottom">
-      <p>© 2025 AegiSky. Non affiliato con Mojang AB o Microsoft.</p>
+    <div class="container footer-legal">
+      <p>© 2025 AegiSky. Not affiliated with Mojang AB or Microsoft.</p>
     </div>
   </footer>
 
