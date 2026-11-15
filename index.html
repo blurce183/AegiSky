@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AegiSky — Server Minecraft Survival &amp; Skyblock Custom</title>
+  <meta name="description" content="AegiSky è un server Minecraft italiano con Survival custom e Skyblock custom. Entra ora: play.aegisky.it" />
+  <link rel="icon" href="assets/logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="brand">
+        <img src="assets/logo.svg" alt="Logo AegiSky" class="brand-logo" />
+        <span class="brand-name">Aegi<span class="accent">Sky</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#survival">Survival</a>
+        <a href="#skyblock">Skyblock</a>
+        <a href="#features">Novità</a>
+        <a href="#join">Come entrare</a>
+        <a href="#store" class="btn btn-small btn-gold">Store</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Apri menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <span class="badge">🌟 1.20.x — Java &amp; Bedrock</span>
+      <h1>Costruisci il tuo <span class="gradient-text">mondo tra le nuvole</span></h1>
+      <p class="hero-sub">
+        AegiSky è il server Minecraft con <strong>Survival custom</strong> e <strong>Skyblock custom</strong>:
+        eventi settimanali, dungeon, missioni e una community che cresce ogni giorno.
+      </p>
+      <div class="ip-box" id="ipBox" title="Clicca per copiare">
+        <span class="ip-label">IP del server</span>
+        <span class="ip-value" id="serverIp">play.aegisky.it</span>
+        <span class="copy-hint" id="copyHint">📋 Copia</span>
+      </div>
+      <div class="hero-actions">
+        <a href="#join" class="btn btn-primary">Inizia a giocare</a>
+        <a href="https://discord.gg/aegisky" target="_blank" rel="noopener" class="btn btn-discord">💬 Entra nel Discord</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num" id="statPlayers">—</span><span class="stat-label">Giocatori online</span></div>
+        <div class="stat"><span class="stat-num">2</span><span class="stat-label">Modalità custom</span></div>
+        <div class="stat"><span class="stat-num">24/7</span><span class="stat-label">Server attivo</span></div>
+        <div class="stat"><span class="stat-num">0</span><span class="stat-label">Pay-to-win</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GAMEMODES ===== -->
+  <section class="section" id="survival">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Modalità</span>
+        <h2>⚔️ Survival Custom</h2>
+        <p>Il survival che conosci, potenziato. Un mondo vivo con economia, mestieri e pericoli.</p>
+      </div>
+      <div class="split">
+        <div class="split-media">
+          <img src="assets/survival.svg" alt="Anteprima Survival AegiSky" loading="lazy" />
+        </div>
+        <div class="split-body">
+          <ul class="feature-list">
+            <li>🌍 <strong>Mondo generato su misura</strong> — biomi custom, strutture esclusive e boss nel overworld.</li>
+            <li>💰 <strong>Economia reale</strong> — mercato giocatori, aste e negozio dinamico.</li>
+            <li>🛡️ <strong>Claim &amp; protezioni</strong> — proteggi le tue basi, crea città con i tuoi amici.</li>
+            <li>🗺️ <strong>Quest ed eventi</strong> — missioni quotidiane, eventi settimanali e stagioni competitive.</li>
+            <li>⛏️ <strong>McMMO &amp; jobs</strong> — sali di livello, sblocca abilità e guadagna giocando.</li>
+          </ul>
+          <a href="#join" class="btn btn-primary">Gioca in Survival</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="skyblock">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Modalità</span>
+        <h2>☁️ Skyblock Custom</h2>
+        <p>Parti da un'isola nel vuoto e trasformala in un impero. Meccaniche mai viste prima.</p>
+      </div>
+      <div class="split split-reverse">
+        <div class="split-media">
+          <img src="assets/skyblock.svg" alt="Anteprima Skyblock AegiSky" loading="lazy" />
+        </div>
+        <div class="split-body">
+          <ul class="feature-list">
+            <li>🏝️ <strong>Isole totalmente custom</strong> — oltre 20 template di partenza con sfide uniche.</li>
+            <li>⬆️ <strong>Sistema di livelli isola</strong> — sblocca nuovi blocchi, mob e aree man mano che cresci.</li>
+            <li>🤖 <strong>Minions &amp; automazione</strong> — delega la farm e ottimizza la produzione.</li>
+            <li>🏆 <strong>Classifica isole</strong> — competi per il primo posto e premi esclusivi.</li>
+            <li>👥 <strong>Co-op fino a 4 giocatori</strong> — costruisci l'isola perfetta insieme.</li>
+          </ul>
+          <a href="#join" class="btn btn-primary">Crea la tua isola</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Perché AegiSky</span>
+        <h2>✨ Un server costruito con cura</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon">🚀</div>
+          <h3>Prestazioni al top</h3>
+          <p>Hardware dedicato e ottimizzazioni continue: zero lag, sempre.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🛡️</div>
+          <h3>Anti-cheat attivo</h3>
+          <p>Staff presente e sistemi automatici per un'esperienza pulita e fair.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎉</div>
+          <h3>Eventi ogni settimana</h3>
+          <p>Dungeon di gruppo, tornei di PvP, drop party e stagioni con premi.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🤝</div>
+          <h3>Community italiana</h3>
+          <p>Discord attivo 24/7, supporto rapido e aggiornamenti votati dai giocatori.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📱</div>
+          <h3>Crossplay</h3>
+          <p>Entra da Java o Bedrock e gioca insieme, senza differenze.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎁</div>
+          <h3>Vota e vinci</h3>
+          <p>Vota il server ogni giorno e ricevi chiavi, monete e cosmetic.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== JOIN ===== -->
+  <section class="section section-cta" id="join">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Come entrare</span>
+        <h2>🎮 Sei a 3 passi dal gioco</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Avvia Minecraft</h3>
+          <p>Versione <strong>1.20.x</strong> o successiva (Java o Bedrock).</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Aggiungi il server</h3>
+          <p>Inserisci l'IP <strong>play.aegisky.it</strong> nella lista server.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Scegli la modalità</h3>
+          <p>Al login scegli tra <strong>Survival</strong> e <strong>Skyblock</strong>. Buon divertimento!</p>
+        </div>
+      </div>
+      <div class="cta-actions">
+        <div class="ip-box ip-box-cta" id="ipBoxCta" title="Clicca per copiare">
+          <span class="ip-value">play.aegisky.it</span>
+          <span class="copy-hint">📋 Copia IP</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STORE / SUPPORT ===== -->
+  <section class="section" id="store">
+    <div class="container">
+      <div class="banner">
+        <div>
+          <h2>💜 Supporta AegiSky</h2>
+          <p>Ranghi, cosmetic e oggetti estetici nello store. Nessun vantaggio pay-to-win: il gioco resta equo per tutti.</p>
+        </div>
+        <div class="banner-actions">
+          <a href="#" class="btn btn-gold">Visita lo Store</a>
+          <a href="https://discord.gg/aegisky" target="_blank" rel="noopener" class="btn btn-ghost">Supporto su Discord</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/logo.svg" alt="Logo AegiSky" class="brand-logo" />
+        <span class="brand-name">Aegi<span class="accent">Sky</span></span>
+        <p>Il server Minecraft Survival &amp; Skyblock custom.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Server</h4>
+        <a href="#survival">Survival</a>
+        <a href="#skyblock">Skyblock</a>
+        <a href="#join">Come entrare</a>
+      </div>
+      <div class="footer-col">
+        <h4>Community</h4>
+        <a href="https://discord.gg/aegisky" target="_blank" rel="noopener">Discord</a>
+        <a href="#">Store</a>
+        <a href="#">Regolamento</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legale</h4>
+        <a href="#">Termini di servizio</a>
+        <a href="#">Privacy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 AegiSky. Non affiliato con Mojang AB o Microsoft.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
