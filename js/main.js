@@ -15,7 +15,7 @@ navLinks.querySelectorAll("a").forEach((a) =>
 );
 
 // Copia IP
-const SERVER_IP = "play.aegisky.it";
+const SERVER_IP = "aegisky.cloud-ip.cc";
 document.querySelectorAll(".ip-box").forEach((box) => {
   box.addEventListener("click", async () => {
     try {
@@ -38,15 +38,19 @@ document.querySelectorAll(".ip-box").forEach((box) => {
   });
 });
 
-// Conteggio giocatori via API mcsrvstat.us (aggiorna l'IP qui sotto se diverso)
+// Conteggio giocatori via API mcsrvstat.us
 async function updatePlayerCount() {
   const el = document.getElementById("statPlayers");
   try {
     const res = await fetch(`https://api.mcsrvstat.us/3/${SERVER_IP}`);
     const data = await res.json();
-    el.textContent = data && data.online ? String(data.players.online) : "Online";
+    if (data && data.online) {
+      el.textContent = `${data.players.online}/${data.players.max}`;
+    } else {
+      el.textContent = "Offline";
+    }
   } catch {
-    el.textContent = "Online";
+    el.textContent = "—";
   }
 }
 updatePlayerCount();
@@ -63,7 +67,7 @@ const observer = new IntersectionObserver(
   },
   { threshold: 0.12 }
 );
-document.querySelectorAll(".section-head, .card, .step, .split, .banner").forEach((el) => {
+document.querySelectorAll(".section-head, .card, .step, .world-card").forEach((el) => {
   el.classList.add("reveal");
   observer.observe(el);
 });
